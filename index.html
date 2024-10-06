@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Versículo Diário</title>
+  
+  <!-- Adicionando um ícone (logo) para a aba do navegador -->
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #000;
+      color: #fff; /* texto branco */
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+      background-color: #111;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative; /* para o ajuste da posição */
+      top: 90px; /* 50 pixels abaixo do topo */
+      left: 50%; /* centralizar horizontalmente */
+      transform: translateX(-50%); /* ajustar para o centro */
+      width: 750px; /* Ajuste a largura */
+      height: auto; /* Altura automática com base no conteúdo */
+    }
+    
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #fff; /* letras brancas */
+    }
+    .verse {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #fff; /* letras brancas */
+    }
+    .reference {
+      font-size: 16px;
+      color: #fff; /* letras brancas */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Versículo do Dia</h1>
+    <p id="bibleVerse" class="verse"></p>
+    <p id="verseReference" class="reference"></p>
+  </div>
+
+  <script>
+    // Lista de versículos, cada um associado a um número
+    const bibleVerses = [
+      { day: 1, verse: "Filipenses 4:6", text: "Não andem ansiosos por coisa alguma, mas em tudo, pela oração e súplicas, e com ação de graças, apresentem seus pedidos a Deus." },
+      { day: 2, verse: "Salmos 107:28", text: "Então, na sua angústia, clamaram ao Senhor, e ele os tirou das suas tribulações." },
+      { day: 3, verse: "Tiago 1:2-4", text: "Meus irmãos, considerem motivo de grande alegria o fato de passarem por diversas provações, pois vocês sabem que a prova da sua fé produz perseverança." },
+      { day: 4, verse: "Romanos 8:28", text: "Sabemos que Deus faz todas as coisas cooperarem para o bem daqueles que o amam." },
+      { day: 5, verse: "Salmos 23:1", text: "O Senhor é o meu pastor; nada me faltará." },
+      { day: 6, verse: "Josué 1:9", text: "Seja forte e corajoso! Não se apavore nem desanime, pois o Senhor, o seu Deus, estará com você por onde você andar." }
+      // Adicione mais versículos conforme necessário
+    ];
+
+    // Obtendo a data atual
+    const today = new Date();
+    const verseIndex = today.getDate() % bibleVerses.length; // Pega o índice baseado na data, garantindo que esteja dentro do tamanho da lista
+
+    // Exibindo o versículo
+    const verseOfTheDay = bibleVerses[verseIndex];
+    document.getElementById('bibleVerse').textContent = verseOfTheDay.text;
+    document.getElementById('verseReference').textContent = verseOfTheDay.verse;
+  </script>
+</body>
+</html>
