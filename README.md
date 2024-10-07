@@ -1,3 +1,3 @@
 # Verses
-This Is A Project To Show 121 Verses In The Bible
+Esse e um projeto que vai mostrar um versículo diferente todo dia
 https://bible-web.github.io/Verses/
